@@ -44,10 +44,10 @@ class BaseService
             $this->client = new \GuzzleHttp\Client([
                 'headers' => [
                     'User-Agent' => 'wdevkit/sdk:1.x',
-                    'Accept'     => 'application/json',
+                    'Accept' => 'application/json',
                     'Content-Type' => 'application/json',
                     'Authorization' => 'Bearer ' . $this->getToken(),
-                ]
+                ],
             ]);
         }
     }

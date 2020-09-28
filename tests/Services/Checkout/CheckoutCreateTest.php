@@ -10,7 +10,7 @@ class CheckoutCreateTest extends TestCase
     {
         $checkout = \Wdevkit\Sdk\Api::checkout([
             'base_uri' => 'https://checkout.test.dev',
-            'token' => 'some_token'
+            'token' => 'some_token',
         ]);
 
         $this->assertEquals('https://checkout.test.dev', $checkout->getBaseUri());
@@ -25,8 +25,8 @@ class CheckoutCreateTest extends TestCase
                     'uuid' => '2dcdf759-1ba1-4d25-aca9-9c0c11224cfd',
                     'actions' => [
                         'get' => 'https://checkout.test.dev/checkouts/2dcdf759-1ba1-4d25-aca9-9c0c11224cfd/profiles',
-                    ]
-                ]
+                    ],
+                ],
             ])),
         ]);
 
@@ -41,8 +41,8 @@ class CheckoutCreateTest extends TestCase
                 'uuid' => '2dcdf759-1ba1-4d25-aca9-9c0c11224cfd',
                 'actions' => [
                     'get' => 'https://checkout.test.dev/checkouts/2dcdf759-1ba1-4d25-aca9-9c0c11224cfd/profiles',
-                ]
-            ]
+                ],
+            ],
         ], $response);
     }
 }

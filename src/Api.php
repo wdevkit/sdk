@@ -9,7 +9,7 @@ class Api
      *
      * @return \Wdevkit\Sdk\Services\Checkout\CheckoutService
      */
-    static public function checkout($settings = [])
+    public static function checkout($settings = [])
     {
         return (new \Wdevkit\Sdk\Services\Checkout\CheckoutService($settings));
     }
