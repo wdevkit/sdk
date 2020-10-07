@@ -13,4 +13,9 @@ class Api
     {
         return (new \Wdevkit\Sdk\Services\Checkout\CheckoutService($settings));
     }
+
+    public function payments($settings = [])
+    {
+        return (new \Wdevkit\Sdk\Services\Payments\PaymentsService($settings));
+    }
 }
