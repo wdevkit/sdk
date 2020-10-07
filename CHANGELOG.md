@@ -2,6 +2,15 @@
 
 All notable changes to `sdk` will be documented in this file
 
-## 1.0.0 - 2020-09-28
+## develop (current)
+
+- add payments service method comments.
+- fix Api payments method to be called statically.
+
+## 1.0.0 - 2020-10-07
 
 - initial release
+
+## dev-develop - 2020-09-28
+
+- develop release

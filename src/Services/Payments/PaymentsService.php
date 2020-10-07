@@ -6,6 +6,12 @@ use Wdevkit\Sdk\Services\BaseService;
 
 class PaymentsService extends BaseService
 {
+    /**
+     * Fetch payment methods on Payments Service.
+     *
+     * @param  array  $data
+     * @return array
+     */
     public function fetchMethods($data = [])
     {
         return $this->makeResponse(
@@ -13,6 +19,12 @@ class PaymentsService extends BaseService
         );
     }
 
+    /**
+     * Create a payment on Payments Service.
+     *
+     * @param  array  $data
+     * @return array
+     */
     public function create($data = [])
     {
         return $this->makeResponse(

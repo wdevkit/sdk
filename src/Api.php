@@ -14,7 +14,12 @@ class Api
         return (new \Wdevkit\Sdk\Services\Checkout\CheckoutService($settings));
     }
 
-    public function payments($settings = [])
+    /**
+     * Get payments service api handler.
+     *
+     * @return \Wdevkit\Sdk\Services\Payments\PaymentsService
+     */
+    public static function payments($settings = [])
     {
         return (new \Wdevkit\Sdk\Services\Payments\PaymentsService($settings));
     }
