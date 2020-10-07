@@ -1,5 +1,8 @@
-
 # A sdk to wdevkit services
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/wdevkit/sdk.svg?style=flat-square)](https://packagist.org/packages/wdevkit/sdk)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/wdevkit/sdk/run-tests?label=tests)](https://github.com/wdevkit/sdk/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/wdevkit/sdk.svg?style=flat-square)](https://packagist.org/packages/wdevkit/sdk)
 
 A sdk that simplifies the usage of many wdevkit services, with a tested, clean and easy to use api.
 
