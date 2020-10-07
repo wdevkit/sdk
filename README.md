@@ -16,10 +16,10 @@ composer require wdevkit/sdk
 The `wdevkit/sdk` provides api to multiple _wdevkit_ services. The services are provided by the `\Wdevkit\Sdk\Api` class, by calling the respective service name as a static method, as you can see below:
 
 ```php
-$account = \Wdevkit\Sdk\Api::accounts($settings);
-$payment = \Wdevkit\Sdk\Api::payments($settings);
-$checkout = \Wdevkit\Sdk\Api::checkouts($settings);
-$order = \Wdevkit\Sdk\Api::orders($settings);
+$accounts = \Wdevkit\Sdk\Api::accounts($settings);
+$payments = \Wdevkit\Sdk\Api::payments($settings);
+$checkout = \Wdevkit\Sdk\Api::checkout($settings);
+$orders = \Wdevkit\Sdk\Api::orders($settings);
 $inventory = \Wdevkit\Sdk\Api::inventory($settings);
 ```
 
@@ -39,7 +39,8 @@ Each service handler instantiated may have its own methods, wich will be describ
 ### Checkout
 
 ##### Create a Checkout
-In order to create a checkout, you can use the `\Wdevkit\Sdk\Api::checkout($settings)->create([])` method from the sdk, and you need to provide an array of items with the required attributes `name`, `sku`, `qty` and `price`.
+
+In order to create a checkout, you can use the `\Wdevkit\Sdk\Api::checkout($settings)->create([])` method from the sdk, and you need to provide the required data.
 
 ``` php
 $settings = [
@@ -49,7 +50,12 @@ $settings = [
 
 $checkout = \Wdevkit\Sdk\Api::checkout($settings)->create([
     'items' => [
-        ['name' => 'Black shirt #1', 'sku' => 'black_shirt_1', 'qty' => 2, 'price' => 15.10],
+        [
+            'name' => 'Black shirt #1', // required
+            'sku' => 'black_shirt_1', // required
+            'qty' => 2, // required
+            'price' => 15.10, // required
+        ],
     ]
 ]);
 
@@ -66,6 +72,7 @@ $checkout = \Wdevkit\Sdk\Api::checkout($settings)->create([
 ### Payments
 
 ##### Fetch Methods
+
 To fetch payment methods options, you can use the `\Wdevkit\Sdk\Api::payments($settings)->fetchMethods([])` method from the sdk.
 
 ```php
@@ -87,6 +94,7 @@ $methods = \Wdevkit\Sdk\Api::payments($settings)->fetchMethods([]);
 ```
 
 ##### Create a Payment
+
 To create a payment, you can use the `\Wdevkit\Sdk\Api::payments($settings)->create([])` method from the sdk, and you need to provide the required data.
 
 ```php
