@@ -63,6 +63,68 @@ $checkout = \Wdevkit\Sdk\Api::checkout($settings)->create([
 ]
 ```
 
+### Payments
+
+##### Fetch Methods
+To fetch payment methods options, you can use the `\Wdevkit\Sdk\Api::payments($settings)->fetchMethods([])` method from the sdk.
+
+```php
+$settings = [
+    'base_uri' => 'https://payments.your_domain.dev',
+    'token' => 'some_token'
+];
+
+$methods = \Wdevkit\Sdk\Api::payments($settings)->fetchMethods([]);
+
+// response
+
+'data' => [
+    'methods' => [
+        ['code' => 'credit_card', 'title' => 'Credit Card', 'driver' => 'stripe'],
+        ['code' => 'transfer', 'title' => 'Transfer', 'driver' => 'bank_acme'],
+    ]
+]
+```
+
+##### Create a Payment
+To create a payment, you can use the `\Wdevkit\Sdk\Api::payments($settings)->create([])` method from the sdk, and you need to provide the required data.
+
+```php
+$settings = [
+    'base_uri' => 'https://payments.your_domain.dev',
+    'token' => 'some_token'
+];
+
+$methods = \Wdevkit\Sdk\Api::payments($settings)->create([
+    'customer' => [
+        'name' => 'John Doe', // required
+        'document' => '12345678909', // required
+        'email' => 'john@test.dev', // required
+    ],
+    'payment' => [
+        'method' => 'credit_card', // required
+        'amount' => 125.35, // required,
+        'installments' => 1, // required
+        'method_data' => [], // required, and attributes required depending on method.
+    ],
+]);
+
+// response
+
+'data' => [
+    'payment_uuid' => 'fb624d85-5a13-47c7-8ea7-b917490d5e12',
+    'payment_method' => 'credit_card',
+    'amount' => '42',
+    'state' => 'processed',
+    'status' => 'success',
+    'errors' => null,
+    'actions' => [
+        ['title' => 'Refund', 'code' => 'refund', 'url' => 'https://refund_route'],
+        ['title' => 'Details', 'code' => 'details', 'url' => 'https://details_route'],
+    ],
+]
+```
+
 ## Testing
 
 ``` bash
