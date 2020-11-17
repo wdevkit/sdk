@@ -1,3 +1,5 @@
+![](https://banners.beyondco.de/Wdevkit%20SDK.png?theme=light&packageName=wdevkit%2Fsdk&pattern=circuitBoard&style=style_1&description=A+sdk+to+wdevkit+services&md=1&showWatermark=0&fontSize=100px&images=cube-transparent)
+
 # A sdk to wdevkit services
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wdevkit/sdk.svg?style=flat-square)](https://packagist.org/packages/wdevkit/sdk)
@@ -133,6 +135,40 @@ $methods = \Wdevkit\Sdk\Api::payments($settings)->create([
         ['title' => 'Refund', 'code' => 'refund', 'url' => 'https://refund_route'],
         ['title' => 'Details', 'code' => 'details', 'url' => 'https://details_route'],
     ],
+]
+```
+
+##### Fetch a Payment
+
+To fetch a previously created payment, you can use the `\Wdevkit\Sdk\Api::payments($settings)->fetch($uuid)` method from the sdk. You need to provide a *payment uuid* on the _fetch_ method.
+
+```php
+$settings = [
+    'base_uri' => 'https://payments.your_domain.dev',
+    'token' => 'some_token'
+];
+
+$methods = \Wdevkit\Sdk\Api::payments($settings)->fetch('fb624d85-5a13-47c7-8ea7-b917490d5e12');
+
+// response
+
+'data' => [
+    'id' => 50,
+    'uuid' => 'fb624d85-5a13-47c7-8ea7-b917490d5e12',
+    'driver' => 'acme',
+    'method' => 'credit_card',
+    'state' => 'processed',
+    'status' => 'success',
+    'amount' => '119.0000',
+    'installments' => 1,
+    'description' => 'test payment',
+    'recurring' => null,
+    'customer' => [
+        'name' => 'John Doe',
+        'email' => 'johndoe@email.com',
+        'phone' => '999999999',
+        'document' => '999999999999'
+    ]
 ]
 ```
 
