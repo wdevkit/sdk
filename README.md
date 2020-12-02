@@ -124,6 +124,10 @@ $methods = \Wdevkit\Sdk\Api::payments($settings)->create([
         'installments' => 1, // required
         'method_data' => [], // required, and attributes required depending on method.
     ],
+    'meta' => [
+        'source_type' => 'acme_system', // required
+        'source_id' => '123456', // required
+    ],
 ]);
 
 // response
