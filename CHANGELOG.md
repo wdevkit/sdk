@@ -4,6 +4,8 @@ All notable changes to `sdk` will be documented in this file
 
 ## develop (current)
 
+- update readme
+
 ## 1.0.1 - 2020-11-17
 
 - add payments service fetch method.

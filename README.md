@@ -61,7 +61,11 @@ $checkout = \Wdevkit\Sdk\Api::checkout($settings)->create([
             'qty' => 2, // required
             'price' => 15.10, // required
         ],
-    ]
+    ],
+    'meta' => [
+        'source_type' => 'acme_system', // required
+        'source_id' => '123456', // required
+    ],
 ]);
 
 // response
