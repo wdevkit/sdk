@@ -4,6 +4,11 @@ All notable changes to `sdk` will be documented in this file
 
 ## develop (current)
 
+- todo
+
+## 1.0.2 - 2021-01-19
+
+- add support to php 8.0 on composer and update dev dependencies
 - update readme
 
 ## 1.0.1 - 2020-11-17
