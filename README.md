@@ -1,4 +1,4 @@
-![](https://banners.beyondco.de/Wdevkit%20SDK.png?theme=light&packageName=wdevkit%2Fsdk&pattern=circuitBoard&style=style_1&description=A+sdk+to+wdevkit+services&md=1&showWatermark=0&fontSize=100px&images=cube-transparent)
+![](https://banners.beyondco.de/Wdevkit%20SDK.png?theme=light&packageManager=composer+require&packageName=wdevkit%2Fsdk&pattern=circuitBoard&style=style_1&description=A+sdk+to+wdevkit+services&md=1&showWatermark=0&fontSize=100px&images=cube-transparent)
 
 # A sdk to wdevkit services
 
