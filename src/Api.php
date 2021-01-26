@@ -23,4 +23,14 @@ class Api
     {
         return (new \Wdevkit\Sdk\Services\Payments\PaymentsService($settings));
     }
+
+    /**
+     * Get payments service api handler.
+     *
+     * @return \Wdevkit\Sdk\Services\Auth\AuthService
+     */
+    public static function auth($settings = [])
+    {
+        return (new \Wdevkit\Sdk\Services\Auth\AuthService($settings));
+    }
 }

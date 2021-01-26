@@ -15,4 +15,9 @@ class SdkTest extends TestCase
     {
         $this->assertInstanceOf(\Wdevkit\Sdk\Services\Payments\PaymentsService::class, \Wdevkit\Sdk\Api::payments());
     }
+
+    public function testItHaveAuthServiceAccessor()
+    {
+        $this->assertInstanceOf(\Wdevkit\Sdk\Services\Auth\AuthService::class, \Wdevkit\Sdk\Api::auth());
+    }
 }

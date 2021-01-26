@@ -6,6 +6,10 @@ All notable changes to `sdk` will be documented in this file
 
 - todo
 
+## 1.0.3 - 2021-01-26
+
+- add auth service fetch user method.
+
 ## 1.0.2 - 2021-01-19
 
 - add support to php 8.0 on composer and update dev dependencies

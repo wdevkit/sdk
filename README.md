@@ -21,7 +21,7 @@ composer require wdevkit/sdk
 The `wdevkit/sdk` provides api to multiple _wdevkit_ services. The services are provided by the `\Wdevkit\Sdk\Api` class, by calling the respective service name as a static method, as you can see below:
 
 ```php
-$accounts = \Wdevkit\Sdk\Api::accounts($settings);
+$accounts = \Wdevkit\Sdk\Api::auth($settings);
 $payments = \Wdevkit\Sdk\Api::payments($settings);
 $checkout = \Wdevkit\Sdk\Api::checkout($settings);
 $orders = \Wdevkit\Sdk\Api::orders($settings);
@@ -40,6 +40,29 @@ By calling the static method, a new instance of the service handler will be inst
 ```
 
 Each service handler instantiated may have its own methods, wich will be described in the respective service documentation.
+
+### Auth
+
+##### Fetch User
+
+In order to check if you are authenticated, you can make a request to a wdevkit auth service `/sanctum/user` endpoint by using the `\Wdevkit\Sdk\Api::auth($settings)->fetchUser([])` method.
+
+``` php
+$settings = [
+    'base_uri' => 'https://auth.your_domain.dev',
+    'token' => 'some_token'
+];
+
+$checkout = \Wdevkit\Sdk\Api::auth($settings)->fetchUser([]);
+
+// response
+
+'data' => [
+    'uuid' => 'a25d81de-8715-480e-a6cb-df24649e7479',
+    'name' => 'John Doe',
+    'email' => 'john@email.com',
+]
+```
 
 ### Checkout
 
